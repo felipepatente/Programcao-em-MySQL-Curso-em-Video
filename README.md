@@ -1,1 +1,1 @@
-# Programcao-em-MySQL-Curso-em-Video
+# Programção em MySQL-Curso em Vídeo
