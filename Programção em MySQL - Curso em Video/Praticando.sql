@@ -43,5 +43,11 @@ SELECT * FROM produto;
 SELECT * FROM estoque;
 
 
+SELECT SUM(qtdAtual) AS 'Total'
+FROM produto;
+
+
+
+
 
 
