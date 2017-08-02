@@ -46,11 +46,12 @@ SELECT * FROM estoque;
 SELECT SUM(qtdAtual) AS 'Total'
 FROM produto;
 
-
 SELECT nome, SUM(qtdAtual) AS 'Total'
 FROM produto
 GROUP BY nome;
 
+SELECT AVG(qtdAtual) AS 'Média'
+FROM Produto;
 
 
 
