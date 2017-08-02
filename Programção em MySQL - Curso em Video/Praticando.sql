@@ -69,3 +69,24 @@ UPDATE produto SET qtdAtual = 20 WHERE qtdAtual = 40;
 
 DELETE FROM estoque WHERE idProduto = 5;
 
+
+CREATE VIEW vw_ProdutoEstoque
+AS
+	SELECT nome, descricao, qtdAtual AS 'Qtd Atual', qtdMax AS 'Qtd Maximo'
+	FROM Produto AS p
+	INNER JOIN estoque AS e
+	ON p.idProduto = e.idProduto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
