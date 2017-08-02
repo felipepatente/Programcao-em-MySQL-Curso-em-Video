@@ -14,3 +14,5 @@ CREATE TABLE estoque(
 	idProduto INT NOT NULL,
 	qtdMax INT NOT NULL
 );
+
+ALTER TABLE estoque ADD CONSTRAINT fk_Estoque FOREIGN KEY (idProduto) REFERENCES produto (idProduto) ;
