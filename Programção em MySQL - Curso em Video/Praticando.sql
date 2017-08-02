@@ -15,55 +15,33 @@ CREATE TABLE estoque(
 	qtdMax INT NOT NULL
 );
 
-ALTER TABLE estoque ADD CONSTRAINT fk_Estoque FOREIGN KEY (idProduto) REFERENCES produto (idProduto) ;
+ALTER TABLE estoque ADD CONSTRAINT fk_Estoque FOREIGN KEY (idProduto) REFERENCES produto (idProduto);
 
 SELECT * FROM produto;
 SELECT * FROM estoque;
 
 
-DELIMITER $$
-CREATE TRIGGER tr_InserirQuantidade BEFORE INSERT
-ON produto
+CREATE TRIGGER tr_InserirQuantidade AFTER INSERT
+ON Produto
 FOR EACH ROW
-
-BEGIN
-	
-	DECLARE @id INT
-	DECLARE @qtdAtual INT
-
-	SELECT @id = idProduto, @qtdAtual = qtdAtual FROM inserted
-
-	INSERT INTO estoque (idProduto, qtdMax) VALUES (@id, @qtdAtual * 2);
-    
-END
-DELIMITER;
+INSERT INTO estoque (idEstoque, idProduto, qtdMax) VALUES (DEFAULT, new.idProduto, new.qtdAtual * 2);
 
 
+DROP TRIGGER tr_InserirQuantidade;
 
-DELIMITER $$
-CREATE TRIGGER antesDeUpdate_empregados 
-BEFORE UPDATE ON empregados
-FOR EACH ROW BEGIN
-INSERT INTO empregados_auditoria
-SET acao = 'update',
-id_empregado = OLD.id_empregado,
-sobrenome = OLD.sobrenome,
-modificadoem = NOW(); END$$
-DELIMITER ;
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Vasssoura','Descrição da vassoura', 20);
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Mesa','Descrição da mesa', 40);
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Fogão','Descrição do fogão', 60);
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Caderno','Descrição do caderno', 80);
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Caneta','Descrição da caneta', 120);
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Bolsa','Descrição da bolsa', 10);
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Computador','Descrição do computador', 30);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+SELECT * FROM produto;
+SELECT * FROM estoque;
 
 
 
