@@ -65,5 +65,7 @@ FROM Produto
 WHERE qtdAtual < (SELECT AVG(qtdMax)
 				  FROM estoque);
 
+UPDATE produto SET qtdAtual = 20 WHERE qtdAtual = 40;
 
+DELETE FROM estoque WHERE idProduto = 5;
 
