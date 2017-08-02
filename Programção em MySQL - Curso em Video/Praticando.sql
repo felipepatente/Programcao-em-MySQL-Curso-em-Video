@@ -60,4 +60,10 @@ SELECT MAX(qtdAtual) AS 'Maior Valor'
 FROM Produto;
 
 
+SELECT nome, descricao
+FROM Produto
+WHERE qtdAtual < (SELECT AVG(qtdMax)
+				  FROM estoque);
+
+
 
