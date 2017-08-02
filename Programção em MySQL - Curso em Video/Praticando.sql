@@ -81,6 +81,14 @@ AS
 SELECT * FROM vw_ProdutoEstoque;
 
 
+CREATE PROCEDURE pr_InserirProduto
+(nome VARCHAR(20), descricao VARCHAR(50), qtdAtual INT)
+	INSERT INTO produto (nome,descricao,qtdAtual) 
+	VALUES (nome, descricao, qtdAtual);
+
+
+
+
 
 
 
