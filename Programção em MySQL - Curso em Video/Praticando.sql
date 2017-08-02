@@ -53,6 +53,11 @@ GROUP BY nome;
 SELECT AVG(qtdAtual) AS 'Média'
 FROM Produto;
 
+SELECT MIN(qtdAtual) AS 'Menor Valor'
+FROM Produto;
+
+SELECT MAX(qtdAtual) AS 'Maior Valor'
+FROM Produto;
 
 
 
