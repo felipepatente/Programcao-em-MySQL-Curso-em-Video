@@ -88,8 +88,10 @@ CREATE PROCEDURE pr_InserirProduto
 
 
 
+CALL pr_InserirProduto('Caderno','Descrição',50);
 
-
+SELECT * FROM produto;
+SELECT * FROM estoque;
 
 
 
