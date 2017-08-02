@@ -47,6 +47,10 @@ SELECT SUM(qtdAtual) AS 'Total'
 FROM produto;
 
 
+SELECT nome, SUM(qtdAtual) AS 'Total'
+FROM produto
+GROUP BY nome;
+
 
 
 
