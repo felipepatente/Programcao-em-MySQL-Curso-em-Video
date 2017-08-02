@@ -78,8 +78,7 @@ AS
 	ON p.idProduto = e.idProduto
 
 
-
-
+SELECT * FROM vw_ProdutoEstoque;
 
 
 
