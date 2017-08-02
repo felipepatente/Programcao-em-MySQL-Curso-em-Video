@@ -29,13 +29,12 @@ INSERT INTO estoque (idEstoque, idProduto, qtdMax) VALUES (DEFAULT, new.idProdut
 
 DROP TRIGGER tr_InserirQuantidade;
 
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Vasssoura','Descrição da vassoura', 20);
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Mesa','Descrição da mesa', 40);
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Fogão','Descrição do fogão', 60);
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Caderno','Descrição do caderno', 80);
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Caneta','Descrição da caneta', 120);
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Bolsa','Descrição da bolsa', 10);
-INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Computador','Descrição do computador', 30);
+
+INSERT INTO Produto(nome, descricao, qtdAtual) VALUES ('Fogão','Descrição do fogão', 60),
+													  ('Caderno','Descrição do caderno', 80),
+													  ('Caneta','Descrição da caneta', 120),
+													  ('Bolsa','Descrição da bolsa', 10),
+													  ('Computador','Descrição do computador', 30);
 
 
 
